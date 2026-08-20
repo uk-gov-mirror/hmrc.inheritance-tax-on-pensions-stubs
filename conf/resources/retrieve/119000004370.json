@@ -1,0 +1,114 @@
+{
+  "success": {
+    "schemeDetails": {
+      "pstr": "00000042IN",
+      "schemeName": "IHTP 574 Scheme 42",
+      "schemeStartDate": "1980-01-01",
+      "schemeEndDate": "2030-01-01"
+    },
+    "reportDetails": {
+      "submissionDate": "2026-08-07T11:50:00Z",
+      "ihtPaymentDate": "2027-02-07",
+      "ihtPaymentReference": "F420000/26D195307",
+      "ihtVersion": "001",
+      "ihtPaid": "true"
+    },
+    "deceased": {
+      "deceasedPersonalDetails": {
+        "title": "Mr",
+        "firstForename": "John",
+        "secondForename": "Sebastian",
+        "surname": "Doe",
+        "ninoExist": "Yes",
+        "nino": "AB123456C"
+      },
+      "deceasedDetails": {
+        "deceasedsDOB": "1948-03-12",
+        "deceasedsDOD": "2026-01-15",
+        "ihtRefNumber": "F420000/26D"
+      }
+    },
+    "personalRep": {
+      "typeOfPR": "01",
+      "prContactDetails": {
+        "title": "Mr",
+        "firstForename": "John",
+        "secondForename": "Patrick",
+        "surname": "Doe"
+      },
+      "prAddress": {
+        "addressLine1": "10 Market Street",
+        "addressLine2": "York",
+        "postcode": "YO1 7AA",
+        "country": "GB"
+      }
+    },
+    "ihTaxInformation": {
+      "dateNoticeReceived": "2026-02-10",
+      "noticeSubmittedByPR": "Yes",
+      "knownBeneficiaries": "Yes",
+      "totalIHTPayable": "100.00",
+      "totalInterestPayable": "10.00",
+      "total": "110.00"
+    },
+    "beneficiaries": [
+      {
+        "beneficiaryType": "01",
+        "beneficiaryContactDetails": {
+          "beneficiaryPersonalDetails": {
+            "title": "Ms",
+            "firstForename": "Jane",
+            "secondForename": "Rebecca",
+            "surname": "Doe",
+            "ninoExist": "Yes",
+            "nino": "CE123456A"
+          },
+          "beneficiaryAddress": {
+            "addressLine1": "21 River Road",
+            "addressLine2": "Leeds",
+            "postcode": "LS1 4AB",
+            "country": "GB"
+          }
+        },
+        "beneficiaryPaymentDetails": {
+          "beneficiaryIHTPayable": "60.00",
+          "beneficiaryInterestPayable": "6.00",
+          "beneficiaryTotal": "66.00"
+        }
+      },
+      {
+        "beneficiaryType": "01",
+        "beneficiaryContactDetails": {
+          "beneficiaryPersonalDetails": {
+            "title": "Mr",
+            "firstForename": "John",
+            "secondForename": "Nicholas",
+            "surname": "Doe",
+            "ninoExist": "Yes",
+            "nino": "GH123456B"
+          },
+          "beneficiaryAddress": {
+            "addressLine1": "8 Station Lane",
+            "addressLine2": "Sheffield",
+            "postcode": "S1 2HH",
+            "country": "GB"
+          }
+        },
+        "beneficiaryPaymentDetails": {
+          "beneficiaryIHTPayable": "40.00",
+          "beneficiaryInterestPayable": "4.00",
+          "beneficiaryTotal": "44.00"
+        }
+      }
+    ],
+    "declarations": {
+      "submittedBy": "PSA",
+      "submitterID": "A2100005",
+      "submitterName": "PSA Name",
+      "psaDeclaration": {
+        "psaDeclaration1": "true",
+        "psaDeclaration2": "true"
+      }
+    }
+  }
+}

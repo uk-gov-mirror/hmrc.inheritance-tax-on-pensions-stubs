@@ -104,8 +104,15 @@ that Bruno and frontend/backend tests can exercise success and error paths witho
 
 Known PSTRs:
 
+- `00000042IN` (SRN: `S0000000042`, includes two amendment scenarios for IHTP-574)
 - `24000001IN`
 - `24000002IN`
+- `24000036IN` (SRN: `S2400000036`, includes two amendment scenarios for IHTP-574)
+
+For each IHTP-574 amendment scenario, the overview contains versions `001` and `002` with the same payment reference and
+different form bundle numbers. Matching retrieve resources are available for every version by either form bundle number or the
+payment reference and version combination. This allows the backend submission-list filtering and report drill-down to be tested
+against realistic obsolete versions.
 
 | Scenario | Query values | Response |
 | --- | --- | --- |

@@ -233,6 +233,10 @@ class IhtpReportRetrieveControllerSpec extends SpecBase with APIResponses {
         "?pstr=24000001IN&fbNumber=119000004360",
         "?pstr=24000001IN&fbNumber=119000004362",
         "?pstr=24000001IN&fbNumber=119000004363",
+        "?pstr=24000036IN&fbNumber=119000004364",
+        "?pstr=24000036IN&fbNumber=119000004366",
+        "?pstr=00000042IN&fbNumber=119000004368",
+        "?pstr=00000042IN&fbNumber=119000004370",
         "?pstr=24000001IN&paymentReferenceNumber=A123456/25A629671&versionNumber=001",
         "?pstr=24000001IN&paymentReferenceNumber=A556789/26A999999&versionNumber=001"
       ).foreach { queryString =>

@@ -1,0 +1,62 @@
+{
+  "success": {
+    "ihtpOverview": [
+      {
+        "fbNumber": "119000004364",
+        "submissionDate": "2026-08-01T09:15:00Z",
+        "paymentDueDate": "2027-02-01",
+        "ihtpVersion": "001",
+        "inheritanceTaxReference": "A240036/26A",
+        "paymentReference": "A240036/26A836241",
+        "title": "Mr",
+        "firstForename": "John",
+        "secondForename": "Nathaniel",
+        "surname": "Doe",
+        "nino": "AB123456C",
+        "ihtpStatus": "Paid"
+      },
+      {
+        "fbNumber": "119000004365",
+        "submissionDate": "2026-08-02T10:30:00Z",
+        "paymentDueDate": "2027-02-02",
+        "ihtpVersion": "002",
+        "inheritanceTaxReference": "A240036/26A",
+        "paymentReference": "A240036/26A836241",
+        "title": "Mr",
+        "firstForename": "John",
+        "secondForename": "Nathaniel",
+        "surname": "Doe",
+        "nino": "AB123456C",
+        "ihtpStatus": "Not reconciled"
+      },
+      {
+        "fbNumber": "119000004366",
+        "submissionDate": "2026-08-03T11:45:00Z",
+        "paymentDueDate": "2027-02-03",
+        "ihtpVersion": "001",
+        "inheritanceTaxReference": "F360024/26B",
+        "paymentReference": "F360024/26B472915",
+        "title": "Mrs",
+        "firstForename": "Jane",
+        "secondForename": "Rebecca",
+        "surname": "Doe",
+        "nino": "AB123456C",
+        "ihtpStatus": "Paid"
+      },
+      {
+        "fbNumber": "119000004367",
+        "submissionDate": "2026-08-04T13:00:00Z",
+        "paymentDueDate": "2027-02-04",
+        "ihtpVersion": "002",
+        "inheritanceTaxReference": "F360024/26B",
+        "paymentReference": "F360024/26B472915",
+        "title": "Mrs",
+        "firstForename": "Jane",
+        "secondForename": "Rebecca",
+        "surname": "Doe",
+        "nino": "AB123456C",
+        "ihtpStatus": "Not reconciled"
+      }
+    ]
+  }
+}
