@@ -1,0 +1,115 @@
+{
+  "success": {
+    "schemeDetails": {
+      "pstr": "24000036IN",
+      "schemeName": "Testdata Scheme",
+      "schemeStartDate": "1980-01-01",
+      "schemeEndDate": "2030-01-01"
+    },
+    "reportDetails": {
+      "submissionDate": "2026-08-04T13:00:00Z",
+      "ihtPaymentReference": "F360024/26B472915",
+      "ihtVersion": "002",
+      "ihtPaid": "false"
+    },
+    "deceased": {
+      "deceasedPersonalDetails": {
+        "title": "Mrs",
+        "firstForename": "Testnamefirst",
+        "secondForename": "Testnamemiddle",
+        "surname": "Testnamelast",
+        "ninoExist": "No",
+        "reasonNoNINO": "Test data does not include a National Insurance number"
+      },
+      "deceasedDetails": {
+        "deceasedsDOB": "1948-03-12",
+        "deceasedsDOD": "2026-01-15",
+        "ihtRefNumber": "F360024/26B"
+      }
+    },
+    "personalRep": {
+      "typeOfPR": "01",
+      "prContactDetails": {
+        "title": "Mr",
+        "firstForename": "Firstname",
+        "secondForename": "Middlename",
+        "surname": "Lastname"
+      },
+      "prAddress": {
+        "addressLine1": "1 ABCDE Street",
+        "addressLine2": "FGHIJ Town",
+        "postcode": "AA1 1AA",
+        "country": "GB"
+      }
+    },
+    "ihTaxInformation": {
+      "ihTaxChangeFlag": "Yes",
+      "dateNoticeReceived": "2026-02-10",
+      "noticeSubmittedByPR": "Yes",
+      "knownBeneficiaries": "Yes",
+      "totalIHTPayable": "120.00",
+      "totalInterestPayable": "12.00",
+      "total": "132.00"
+    },
+    "beneficiaries": [
+      {
+        "beneficiaryChangeFlag": "Yes",
+        "beneficiaryType": "01",
+        "beneficiaryContactDetails": {
+          "beneficiaryPersonalDetails": {
+            "title": "Ms",
+            "firstForename": "Testnamefirst",
+            "secondForename": "Testnamemiddle",
+            "surname": "Testnamelast",
+            "ninoExist": "No",
+            "reasonNoNINO": "Test data does not include a National Insurance number"
+          },
+          "beneficiaryAddress": {
+            "addressLine1": "1 Test Street",
+            "addressLine2": "Test Town",
+            "postcode": "TE57 0AA",
+            "country": "GB"
+          }
+        },
+        "beneficiaryPaymentDetails": {
+          "beneficiaryIHTPayable": "80.00",
+          "beneficiaryInterestPayable": "8.00",
+          "beneficiaryTotal": "88.00"
+        }
+      },
+      {
+        "beneficiaryType": "01",
+        "beneficiaryContactDetails": {
+          "beneficiaryPersonalDetails": {
+            "title": "Mr",
+            "firstForename": "Testdatafirst",
+            "secondForename": "Testdatamiddle",
+            "surname": "Testdatalast",
+            "ninoExist": "No",
+            "reasonNoNINO": "Test data does not include a National Insurance number"
+          },
+          "beneficiaryAddress": {
+            "addressLine1": "1 ABCDE Street",
+            "addressLine2": "FGHIJ Town",
+            "postcode": "AA1 1AA",
+            "country": "GB"
+          }
+        },
+        "beneficiaryPaymentDetails": {
+          "beneficiaryIHTPayable": "40.00",
+          "beneficiaryInterestPayable": "4.00",
+          "beneficiaryTotal": "44.00"
+        }
+      }
+    ],
+    "declarations": {
+      "submittedBy": "PSA",
+      "submitterID": "A2100005",
+      "submitterName": "Testnamefirst Testnamelast",
+      "psaDeclaration": {
+        "psaDeclaration1": "true",
+        "psaDeclaration2": "true"
+      }
+    }
+  }
+}

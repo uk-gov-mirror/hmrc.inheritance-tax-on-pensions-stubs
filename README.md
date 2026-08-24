@@ -104,8 +104,15 @@ that Bruno and frontend/backend tests can exercise success and error paths witho
 
 Known PSTRs:
 
+- `00000042IN` (SRN: `S0000000042`, includes two amendment scenarios for IHTP-574)
 - `24000001IN`
 - `24000002IN`
+- `24000036IN` (SRN: `S2400000036`, includes two amendment scenarios for IHTP-574)
+
+For each IHTP-574 amendment scenario, the overview contains versions `001` and `002` with the same payment reference and
+different form bundle numbers. Matching retrieve resources are available for every version by either form bundle number or the
+payment reference and version combination. This allows the backend submission-list filtering and report drill-down to be tested
+against representative obsolete versions.
 
 | Scenario | Query values | Response |
 | --- | --- | --- |
@@ -151,26 +158,34 @@ Known fbNumbers:
 - `119000004361` (PSTR: 24000001IN, amendment version 002)
 - `119000004362` (PSTR: 24000001IN, paid version 001)
 - `119000004363` (PSTR: 24000001IN, paid version 001)
+- `119000004364` and `119000004365` (PSTR: 24000036IN, paid amendment versions 001 and 002)
+- `119000004366` and `119000004367` (PSTR: 24000036IN, not reconciled amendment versions 001 and 002)
+- `119000004368` and `119000004369` (PSTR: 00000042IN, paid amendment versions 001 and 002)
+- `119000004370` and `119000004371` (PSTR: 00000042IN, not reconciled amendment versions 001 and 002)
 
 Known paymentReference + version combinations:
 
-- `A123456/25A-629671` + `001` (PSTR: 24000001IN)
-- `A556789/26A-758204` + `001` (PSTR: 24000001IN, pinned amendment baseline)
-- `A556789/26A-758204` + `002` (PSTR: 24000001IN, current amended report)
-- `F246810/26B-314159` + `001` (PSTR: 24000001IN, paid John Edward Doe report)
-- `A975310/26C-271828` + `001` (PSTR: 24000001IN, paid Jane Margaret Doe report)
+- `A123456/25A629671` + `001` (PSTR: 24000001IN)
+- `A556789/26A758204` + `001` (PSTR: 24000001IN, pinned amendment baseline)
+- `A556789/26A758204` + `002` (PSTR: 24000001IN, current amended report)
+- `F246810/26B314159` + `001` (PSTR: 24000001IN, paid John Edward Doe report)
+- `A975310/26C271828` + `001` (PSTR: 24000001IN, paid Jane Margaret Doe report)
+- `A240036/26A836241` + `001` or `002` (PSTR: 24000036IN, paid amendment)
+- `F360024/26B472915` + `001` or `002` (PSTR: 24000036IN, not reconciled amendment)
+- `A000042/26C604218` + `001` or `002` (PSTR: 00000042IN, paid amendment)
+- `F420000/26D195307` + `001` or `002` (PSTR: 00000042IN, not reconciled amendment)
 
 #### Amendment stub scenario
 
 The overview for PSTR `24000001IN` contains two versions of the report identified by inheritance tax reference
-`A556789/26A` and payment reference `A556789/26A-758204`.
+`A556789/26A` and payment reference `A556789/26A758204`.
 
 | Version | fbNumber | Retrieve status | Change flags |
 | --- | --- | --- | --- |
 | `001` | `119000004360` | `Paid` | All section and beneficiary flags are `false` |
 | `002` | `119000004361` | `Submitted` | IHT tax information and beneficiary details are `true`; the first beneficiary is `true` |
 
-Both versions can be retrieved either by their fbNumber or by `A556789/26A-758204` with the corresponding version number. The
+Both versions can be retrieved either by their fbNumber or by `A556789/26A758204` with the corresponding version number. The
 deceased and PR details are unchanged. Version 002 increases the tax totals and the amount assigned to the first beneficiary.
 All `changeFlag` values are `false` for initial version `001` reports. Later versions set flags to `true` only for sections or
 beneficiaries changed by the amendment.
@@ -179,8 +194,8 @@ beneficiaries changed by the amendment.
 
 | fbNumber | Payment reference | Deceased | Overview status | Retrieve status | Version |
 | --- | --- | --- | --- | --- | --- |
-| `119000004362` | `F246810/26B-314159` | John Edward Doe | `Paid` | `Paid` | `001` |
-| `119000004363` | `A975310/26C-271828` | Jane Margaret Doe | `Paid` | `Paid` | `001` |
+| `119000004362` | `F246810/26B314159` | John Edward Doe | `Paid` | `Paid` | `001` |
+| `119000004363` | `A975310/26C271828` | Jane Margaret Doe | `Paid` | `Paid` | `001` |
 
 Both reports are included in the unfiltered overview for PSTR `24000001IN`, can be selected with `status=Paid`, and can be
 retrieved either by their fbNumber or by their payment reference with `versionNumber=001`.

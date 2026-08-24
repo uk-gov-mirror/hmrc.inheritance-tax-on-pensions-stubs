@@ -63,6 +63,58 @@
         "firstForename": "Jane",
         "surname": "Doe",
         "ihtpStatus": "Not reconciled"
+      },
+      {
+        "fbNumber": "119000004368",
+        "submissionDate": "2026-08-05T09:20:00Z",
+        "paymentDueDate": "2027-02-05",
+        "ihtpVersion": "001",
+        "inheritanceTaxReference": "A000042/26C",
+        "paymentReference": "A000042/26C604218",
+        "title": "Ms",
+        "firstForename": "Testdatafirst",
+        "secondForename": "Testdatamiddle",
+        "surname": "Testdatalast",
+        "ihtpStatus": "Paid"
+      },
+      {
+        "fbNumber": "119000004369",
+        "submissionDate": "2026-08-06T10:35:00Z",
+        "paymentDueDate": "2027-02-06",
+        "ihtpVersion": "002",
+        "inheritanceTaxReference": "A000042/26C",
+        "paymentReference": "A000042/26C604218",
+        "title": "Ms",
+        "firstForename": "Testdatafirst",
+        "secondForename": "Testdatamiddle",
+        "surname": "Testdatalast",
+        "ihtpStatus": "Paid"
+      },
+      {
+        "fbNumber": "119000004370",
+        "submissionDate": "2026-08-07T11:50:00Z",
+        "paymentDueDate": "2027-02-07",
+        "ihtpVersion": "001",
+        "inheritanceTaxReference": "F420000/26D",
+        "paymentReference": "F420000/26D195307",
+        "title": "Mr",
+        "firstForename": "Firstnamefour",
+        "secondForename": "Middlenamefour",
+        "surname": "Lastnamefour",
+        "ihtpStatus": "Not reconciled"
+      },
+      {
+        "fbNumber": "119000004371",
+        "submissionDate": "2026-08-08T13:05:00Z",
+        "paymentDueDate": "2027-02-08",
+        "ihtpVersion": "002",
+        "inheritanceTaxReference": "F420000/26D",
+        "paymentReference": "F420000/26D195307",
+        "title": "Mr",
+        "firstForename": "Firstnamefour",
+        "secondForename": "Middlenamefour",
+        "surname": "Lastnamefour",
+        "ihtpStatus": "Not reconciled"
       }
     ]
   }

@@ -84,8 +84,45 @@ class IhtpReportOverviewControllerSpec extends SpecBase with APIResponses {
       amendmentReports.map(report => (report \ "paymentReference").as[String]).distinct mustBe Seq("A556789/26A758204")
     }
 
+    "return two amendment scenarios with consistent payment statuses for each IHTP-574 scheme" in {
+      Seq(
+        "24000036IN" -> Map(
+          "A240036/26A836241" -> "Paid",
+          "F360024/26B472915" -> "Not reconciled"
+        ),
+        "00000042IN" -> Map(
+          "A000042/26C604218" -> "Paid",
+          "F420000/26D195307" -> "Not reconciled"
+        )
+      ).foreach { case (pstr, expectedStatuses) =>
+        val result = controller.getIhtpOverview()(
+          overviewRequest(s"?pstr=$pstr&dateFrom=2026-01-01&dateTo=2026-12-31")
+        )
+
+        status(result) mustBe Status.OK
+        val reports = (contentAsJson(result) \ "success" \ "ihtpOverview").as[Seq[JsValue]]
+        val amendmentScenarios = reports
+          .groupBy(report => (report \ "paymentReference").as[String])
+          .values
+          .filter(_.size == 2)
+          .toSeq
+
+        amendmentScenarios.size mustBe 2
+        amendmentScenarios.foreach { versions =>
+          versions.map(report => (report \ "ihtpVersion").as[String]).sorted mustBe Seq("001", "002")
+          versions.map(report => (report \ "fbNumber").as[String]).distinct.size mustBe 2
+          versions.map(report => (report \ "inheritanceTaxReference").as[String]).distinct.size mustBe 1
+
+          val paymentReference = (versions.head \ "paymentReference").as[String]
+          versions.map(report => (report \ "ihtpStatus").as[String]).distinct mustBe
+            Seq(expectedStatuses(paymentReference))
+          versions.foreach(report => (report \ "nino").toOption mustBe None)
+        }
+      }
+    }
+
     "return payment references in IHT reference plus six digit UPR format" in {
-      Seq("00000042IN", "24000001IN", "24000002IN").foreach { pstr =>
+      Seq("00000042IN", "24000001IN", "24000002IN", "24000036IN").foreach { pstr =>
         val result = controller.getIhtpOverview()(
           overviewRequest(s"?pstr=$pstr&dateFrom=2026-01-01&dateTo=2026-12-31")
         )
