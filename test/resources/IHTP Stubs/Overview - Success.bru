@@ -36,7 +36,7 @@ tests {
         report => report.inheritanceTaxReference === "A556789/26A"
       );
       expect(reports).to.have.lengthOf(2);
-      expect(reports.map(report => report.ihtpVersion)).to.deep.equal(["001", "002"]);
+      expect(reports.map(report => report.ihtVersion)).to.deep.equal(["001", "002"]);
       expect(reports.map(report => report.paymentReference)).to.deep.equal(
         ["A556789/26A758204", "A556789/26A758204"]
       );
@@ -44,7 +44,7 @@ tests {
   
   test("Returns two additional paid version 001 reports", function () {
       const reports = res.body.success.ihtpOverview.filter(
-        report => report.ihtpStatus === "Paid" && report.ihtpVersion === "001"
+        report => report.ihtpStatus === "Paid" && report.ihtVersion === "001"
       );
       expect(reports).to.have.lengthOf(3);
       expect(reports.map(report => report.fbNumber)).to.deep.equal(
