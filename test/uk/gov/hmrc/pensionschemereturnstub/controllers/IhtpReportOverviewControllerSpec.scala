@@ -79,7 +79,7 @@ class IhtpReportOverviewControllerSpec extends SpecBase with APIResponses {
         .filter(report => (report \ "inheritanceTaxReference").asOpt[String].contains("A556789/26A"))
 
       amendmentReports.size mustBe 2
-      amendmentReports.map(report => (report \ "ihtpVersion").as[String]) mustBe Seq("001", "002")
+      amendmentReports.map(report => (report \ "ihtVersion").as[String]) mustBe Seq("001", "002")
       amendmentReports.map(report => (report \ "fbNumber").as[String]).distinct.size mustBe 2
       amendmentReports.map(report => (report \ "paymentReference").as[String]).distinct mustBe Seq("A556789/26A758204")
     }
@@ -109,7 +109,7 @@ class IhtpReportOverviewControllerSpec extends SpecBase with APIResponses {
 
         amendmentScenarios.size mustBe 2
         amendmentScenarios.foreach { versions =>
-          versions.map(report => (report \ "ihtpVersion").as[String]).sorted mustBe Seq("001", "002")
+          versions.map(report => (report \ "ihtVersion").as[String]).sorted mustBe Seq("001", "002")
           versions.map(report => (report \ "fbNumber").as[String]).distinct.size mustBe 2
           versions.map(report => (report \ "inheritanceTaxReference").as[String]).distinct.size mustBe 1
 
@@ -151,7 +151,7 @@ class IhtpReportOverviewControllerSpec extends SpecBase with APIResponses {
         .as[Seq[JsValue]]
         .filter(report =>
           (report \ "ihtpStatus").as[String] == "Paid" &&
-            (report \ "ihtpVersion").as[String] == "001"
+            (report \ "ihtVersion").as[String] == "001"
         )
 
       paidReports
