@@ -48,9 +48,9 @@
       "dateNoticeReceived": "2026-02-10",
       "noticeSubmittedByPR": "Yes",
       "knownBeneficiaries": "Yes",
-      "totalIHTPayable": "120.00",
-      "totalInterestPayable": "12.00",
-      "total": "132.00"
+      "totalIHTPayable": 120.00,
+      "totalInterestPayable": 12.00,
+      "total": 132.00
     },
     "beneficiaries": [
       {
@@ -73,9 +73,9 @@
           }
         },
         "beneficiaryPaymentDetails": {
-          "beneficiaryIHTPayable": "80.00",
-          "beneficiaryInterestPayable": "8.00",
-          "beneficiaryTotal": "88.00"
+          "beneficiaryIHTPayable": 80.00,
+          "beneficiaryInterestPayable": 8.00,
+          "beneficiaryTotal": 88.00
         }
       },
       {
@@ -97,9 +97,9 @@
           }
         },
         "beneficiaryPaymentDetails": {
-          "beneficiaryIHTPayable": "40.00",
-          "beneficiaryInterestPayable": "4.00",
-          "beneficiaryTotal": "44.00"
+          "beneficiaryIHTPayable": 40.00,
+          "beneficiaryInterestPayable": 4.00,
+          "beneficiaryTotal": 44.00
         }
       }
     ],
