@@ -20,7 +20,7 @@ import play.api.Logger
 import play.api.libs.json.Json
 import play.api.mvc.{Action, AnyContent, ControllerComponents}
 import uk.gov.hmrc.inheritancetaxonpensionsstubs.config.Constants._
-import uk.gov.hmrc.inheritancetaxonpensionsstubs.models.IhtpPaymentNoticeSubmissionPayload
+import uk.gov.hmrc.inheritancetaxonpensionsstubs.models.IhtpPaymentNoticeSubmission
 
 import javax.inject.{Inject, Singleton}
 import scala.concurrent.Future
@@ -38,7 +38,7 @@ class IhtpReportSubmissionController @Inject() (
       case Some(body) =>
         logger.info(message = s"postIhtpReport - Incoming payload: \n${Json.prettyPrint(body)}\n")
 
-        Try(body.as[IhtpPaymentNoticeSubmissionPayload]) match {
+        Try(body.as[IhtpPaymentNoticeSubmission]) match {
           case Success(submissionResponse) =>
             val significantChar: String = submissionResponse.deceased.deceasedDetails.ihtRefNumber.takeRight(1)
 

@@ -21,7 +21,7 @@ import play.api.libs.json.*
 import play.api.test.FakeRequest
 import play.api.test.Helpers.*
 import uk.gov.hmrc.inheritancetaxonpensionsstubs.controllers.IhtpReportSubmissionController
-import uk.gov.hmrc.inheritancetaxonpensionsstubs.models.{IhtpPaymentNoticeSubmissionPayload, PrContactDetails}
+import uk.gov.hmrc.inheritancetaxonpensionsstubs.models.{IhtpPaymentNoticeSubmission, PrContactDetails}
 import uk.gov.hmrc.inheritancetaxonpensionsstubs.utils.{APIResponses, JsonUtils}
 import uk.gov.hmrc.pensionschemereturnstub.base.SpecBase
 
@@ -90,9 +90,9 @@ class IhtpReportSubmissionControllerSpec extends SpecBase with APIResponses {
           "dateNoticeReceived" -> "2026-03-27",
           "noticeSubmittedByPR" -> "Yes",
           "knownBeneficiaries" -> "No",
-          "totalIHTPayable" -> "1000.00",
-          "totalInterestPayable" -> "50.00",
-          "total" -> "1050.00"
+          "totalIHTPayable" -> 1000.00,
+          "totalInterestPayable" -> 50.00,
+          "total" -> 1050.00
         ),
         "declarations" -> Json.obj(
           "submittedBy" -> "PSA",
@@ -103,7 +103,7 @@ class IhtpReportSubmissionControllerSpec extends SpecBase with APIResponses {
           )
         )
       )
-      validData.validate[IhtpPaymentNoticeSubmissionPayload].map(_.personalRep.prContactDetails) mustBe JsSuccess(
+      validData.validate[IhtpPaymentNoticeSubmission].map(_.personalRep.prContactDetails) mustBe JsSuccess(
         PrContactDetails(Some("Test Organisation"), Some("Ms"), "Jane", Some("Ann"), "Doe")
       )
 
@@ -138,7 +138,7 @@ class IhtpReportSubmissionControllerSpec extends SpecBase with APIResponses {
           )
         )
       )
-      invalidData.validate[IhtpPaymentNoticeSubmissionPayload] mustBe a[JsError]
+      invalidData.validate[IhtpPaymentNoticeSubmission] mustBe a[JsError]
 
       val postRequest = fakePostRequest.withJsonBody(invalidData)
 
