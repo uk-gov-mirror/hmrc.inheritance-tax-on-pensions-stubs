@@ -178,8 +178,8 @@ class IhtpReportRetrieveControllerSpec extends SpecBase with APIResponses {
         .as[Seq[JsObject]]
         .map(b => (b \ "beneficiaryChangeFlag").toOption.map(_.as[JsString])) mustBe Seq(Some(JsString("Yes")), None)
 
-      (versionOne \ "success" \ "ihTaxInformation" \ "totalIHTPayable").as[String] mustBe "100.00"
-      (versionTwo \ "success" \ "ihTaxInformation" \ "totalIHTPayable").as[String] mustBe "120.00"
+      (versionOne \ "success" \ "ihTaxInformation" \ "totalIHTPayable").as[Double] mustBe 100.00
+      (versionTwo \ "success" \ "ihTaxInformation" \ "totalIHTPayable").as[Double] mustBe 120.00
     }
 
     "return each amendment version by paymentReference and versionNumber" in {

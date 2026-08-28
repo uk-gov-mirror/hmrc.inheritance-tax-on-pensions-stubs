@@ -36,9 +36,9 @@
     "dateNoticeReceived": "2026-03-27",
     "noticeSubmittedByPR": "Yes",
     "knownBeneficiaries": "No",
-    "totalIHTPayable": "1000.00",
-    "totalInterestPayable": "50.00",
-    "total": "1050.00"
+    "totalIHTPayable": 1000.00,
+    "totalInterestPayable": 50.00,
+    "total": 1050.00
   },
   "declarations": {
     "submittedBy": "PSP",

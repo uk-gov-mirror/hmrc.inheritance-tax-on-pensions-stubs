@@ -16,10 +16,11 @@
 
 package uk.gov.hmrc.inheritancetaxonpensionsstubs.models
 
-import play.api.libs.json.{Json, OFormat}
+import play.api.libs.json._
+import play.api.libs.functional.syntax._
 import uk.gov.hmrc.inheritancetaxonpensionsstubs.models.etmp.{IndividualOrOrg, IndividualOrTrust, YesNo}
 
-case class IhtpPaymentNoticeSubmissionPayload(
+case class IhtpPaymentNoticeSubmission(
   reportDetails: ReportDetails,
   deceased: Deceased,
   personalRep: PrDetails,
@@ -28,25 +29,14 @@ case class IhtpPaymentNoticeSubmissionPayload(
   declarations: Declarations
 )
 
-object IhtpPaymentNoticeSubmissionPayload {
-  implicit val ihtpPaymentNoticeSubmissionPayloadFormat: OFormat[IhtpPaymentNoticeSubmissionPayload] =
-    Json.format[IhtpPaymentNoticeSubmissionPayload]
-}
-
-case class IhtpReportSubmissionPayload(
-  reportDetails: ReportDetails,
-  deceasedPersonalDetails: DeceasedDetails,
-  prDetails: PrDetails,
-  ihtTaxInformation: IhtTaxInformation
-)
-
-object IhtpReportSubmissionPayload {
-  implicit val ihtpReportSubmissionPayloadFormat: OFormat[IhtpReportSubmissionPayload] =
-    Json.format[IhtpReportSubmissionPayload]
+object IhtpPaymentNoticeSubmission {
+  implicit val ihtpPaymentNoticeSubmissionFormat: OFormat[IhtpPaymentNoticeSubmission] =
+    Json.format[IhtpPaymentNoticeSubmission]
 }
 
 case class ReportDetails(
-  pstr: String
+  pstr: String,
+  ihtPaymentReference: Option[String]
 )
 
 object ReportDetails {
@@ -116,19 +106,63 @@ object PrContactDetails {
     Json.format[PrContactDetails]
 }
 
-case class IhTaxInformation(
-  ihTaxChangeFlag: Option[YesNo] = None,
-  dateNoticeReceived: String,
-  noticeSubmittedByPR: YesNo,
-  knownBeneficiaries: Option[YesNo],
-  totalIHTPayable: Option[String],
-  totalInterestPayable: Option[String],
-  total: Option[String]
+case class AddressDetails(
+  addressLine1: String,
+  addressLine2: String,
+  addressLine3: Option[String] = None,
+  addressLine4: Option[String] = None,
+  postcode: Option[String] = None,
+  country: String
 )
 
-object IhTaxInformation {
-  implicit val ihTaxInformationFormat: OFormat[IhTaxInformation] =
-    Json.format[IhTaxInformation]
+object AddressDetails {
+  implicit val addressDetailsFormat: OFormat[AddressDetails] =
+    Json.format[AddressDetails]
+}
+
+case class IndividualName(
+  title: Option[String],
+  firstForename: String,
+  secondForename: Option[String],
+  surname: String
+)
+
+object IndividualName {
+  implicit val individualNameFormat: OFormat[IndividualName] =
+    Json.format[IndividualName]
+}
+
+case class IndividualDetails(name: IndividualName, address: AddressDetails)
+
+object IndividualDetails {
+  implicit val individualDetailsReads: Reads[IndividualDetails] =
+    JsPath.read[IndividualName].and(JsPath.read[AddressDetails])(IndividualDetails.apply)
+
+  implicit val individualDetailsWrites: OWrites[IndividualDetails] = individualDetails =>
+    Json.toJsObject(individualDetails.name) ++ Json.toJsObject(individualDetails.address)
+}
+
+case class OrganisationInfo(
+  organisationName: String,
+  title: Option[String],
+  firstForename: String,
+  secondForename: Option[String],
+  surname: String
+)
+
+object OrganisationInfo {
+  implicit val organisationDetailsFormat: OFormat[OrganisationInfo] =
+    Json.format[OrganisationInfo]
+}
+
+case class OrganisationDetails(info: OrganisationInfo, address: AddressDetails)
+
+object OrganisationDetails {
+  implicit val organisationDetailsReads: Reads[OrganisationDetails] =
+    JsPath.read[OrganisationInfo].and(JsPath.read[AddressDetails])(OrganisationDetails.apply)
+
+  implicit val organisationDetailsWrites: OWrites[OrganisationDetails] = organisationDetails =>
+    Json.toJsObject(organisationDetails.info) ++ Json.toJsObject(organisationDetails.address)
 }
 
 case class BeneficiaryDetails(
@@ -170,14 +204,50 @@ object BeneficiaryPersonalDetails {
 }
 
 case class BeneficiaryPaymentDetails(
-  beneficiaryIHTPayable: String,
-  beneficiaryInterestPayable: String,
-  beneficiaryTotal: String
+  beneficiaryIHTPayable: Double,
+  beneficiaryInterestPayable: Double,
+  beneficiaryTotal: Double
 )
 
 object BeneficiaryPaymentDetails {
   implicit val BeneficiaryPaymentDetailsFormat: OFormat[BeneficiaryPaymentDetails] =
     Json.format[BeneficiaryPaymentDetails]
+}
+
+case class NinoOrReasonAnswers(nino: Option[String], reasonNoNINO: Option[String])
+
+object NinoOrReasonAnswers {
+  implicit val ninoOrReasonAnswersFormat: OFormat[NinoOrReasonAnswers] =
+    Json.format[NinoOrReasonAnswers]
+}
+
+case class BirthDeathDates(dateOfBirth: String, dateOfDeath: String)
+
+object BirthDeathDates {
+  implicit val birthDeathDatesFormat: OFormat[BirthDeathDates] =
+    Json.format[BirthDeathDates]
+}
+
+case class IhtpPaymentNoticeResponse(formBundleNo: String, ihtPaymentReference: String)
+
+object IhtpPaymentNoticeResponse {
+  implicit val ihtpPaymentNoticeResponseFormat: OFormat[IhtpPaymentNoticeResponse] =
+    Json.format[IhtpPaymentNoticeResponse]
+}
+
+case class IhTaxInformation(
+  ihTaxChangeFlag: Option[YesNo] = None,
+  dateNoticeReceived: String,
+  noticeSubmittedByPR: YesNo,
+  knownBeneficiaries: Option[YesNo],
+  totalIHTPayable: Option[Double],
+  totalInterestPayable: Option[Double],
+  total: Option[Double]
+)
+
+object IhTaxInformation {
+  implicit val ihTaxInformationFormat: OFormat[IhTaxInformation] =
+    Json.format[IhTaxInformation]
 }
 
 case class Declarations(
@@ -211,65 +281,4 @@ case class PspDeclaration(
 object PspDeclaration {
   implicit val pspDeclarationFormat: OFormat[PspDeclaration] =
     Json.format[PspDeclaration]
-}
-
-case class IndividualName(
-  title: Option[String],
-  firstForename: String,
-  secondForename: Option[String],
-  surname: String,
-  addressLine1: Option[String] = None,
-  addressLine2: Option[String] = None,
-  addressLine3: Option[String] = None,
-  addressLine4: Option[String] = None,
-  ukPostcode: Option[String] = None,
-  country: Option[String] = None
-)
-
-object IndividualName {
-  implicit val individualNameFormat: OFormat[IndividualName] =
-    Json.format[IndividualName]
-}
-
-case class OrganisationDetails(
-  organisationName: String,
-  title: Option[String],
-  firstForename: String,
-  secondForename: Option[String],
-  surname: String,
-  addressLine1: Option[String] = None,
-  addressLine2: Option[String] = None,
-  addressLine3: Option[String] = None,
-  addressLine4: Option[String] = None,
-  ukPostcode: Option[String] = None,
-  country: Option[String] = None
-)
-
-object OrganisationDetails {
-  implicit val organisationDetailsFormat: OFormat[OrganisationDetails] =
-    Json.format[OrganisationDetails]
-}
-
-case class IhtTaxInformation(
-  dateThePensionSchemeReceivedNoticeToPay: String,
-  didThePersonalRepresentativeSubmitTheNotice: YesNo
-)
-
-object IhtTaxInformation {
-  implicit val ihtTaxInformationFormat: OFormat[IhtTaxInformation] =
-    Json.format[IhtTaxInformation]
-}
-
-case class AddressDetails(
-  addressLine1: String,
-  addressLine2: String,
-  addressLine3: Option[String] = None,
-  addressLine4: Option[String] = None,
-  postcode: Option[String] = None,
-  country: String
-)
-
-object AddressDetails {
-  implicit val addressDetailsFormat: OFormat[AddressDetails] =
-    Json.format[AddressDetails]
 }
