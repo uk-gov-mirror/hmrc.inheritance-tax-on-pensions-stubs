@@ -192,10 +192,10 @@ beneficiaries changed by the amendment.
 
 #### Additional paid version 001 scenarios
 
-| fbNumber | Payment reference | Deceased | Overview status | Retrieve status | Version |
-| --- | --- | --- | --- | --- | --- |
-| `119000004362` | `F246810/26B314159` | Firstname Middlename Surname | `Paid` | `Paid` | `001` |
-| `119000004363` | `A975310/26C271828` | FirstnameA Margaret Surname | `Paid` | `Paid` | `001` |
+| fbNumber | Payment reference | Deceased                       | Overview status | Retrieve status | Version |
+| --- | --- |--------------------------------| --- | --- | --- |
+| `119000004362` | `F246810/26B314159` | Firstname Middlename Surname   | `Paid` | `Paid` | `001` |
+| `119000004363` | `A975310/26C271828` | FirstnameA MiddlenameA Surname | `Paid` | `Paid` | `001` |
 
 Both reports are included in the unfiltered overview for PSTR `24000001IN`, can be selected with `status=Paid`, and can be
 retrieved either by their fbNumber or by their payment reference with `versionNumber=001`.
