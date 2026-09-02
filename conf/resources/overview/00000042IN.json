@@ -9,10 +9,11 @@
         "inheritanceTaxReference": "A123456/42A",
         "paymentReference": "A123456/42A518742",
         "title": "Dr",
-        "firstForename": "Jane",
-        "secondForename": "Elizabeth",
-        "surname": "Doe",
-        "nino": "AB123456C",
+        "firstForename": "FirstnameA",
+        "secondForename": "SecondnameB",
+        "surname": "Surname",
+        "nino": null,
+        "reasonForNoNino": "Reason for no national insurance number",
         "ihtpStatus": "Not reconciled"
       },
       {
@@ -23,9 +24,9 @@
         "inheritanceTaxReference": "F654321/42B",
         "paymentReference": "F654321/42B749183",
         "title": "Mr",
-        "firstForename": "John",
-        "secondForename": "Arthur",
-        "surname": "Doe",
+        "firstForename": "Firstname",
+        "secondForename": "SecondnameC",
+        "surname": "Surname",
         "ihtpStatus": "Not reconciled"
       },
       {
@@ -35,9 +36,9 @@
         "ihtVersion": "001",
         "inheritanceTaxReference": "A642531/42C",
         "paymentReference": "A642531/42C749183",
-        "firstForename": "Jane",
-        "secondForename": "Victoria",
-        "surname": "Doe",
+        "firstForename": "FirstnameA",
+        "secondForename": "SecondnameD",
+        "surname": "Surname",
         "ihtpStatus": "Not reconciled"
       },
       {
@@ -47,9 +48,9 @@
         "ihtVersion": "003",
         "inheritanceTaxReference": "F135246/42D",
         "paymentReference": "F135246/42D836204",
-        "firstForename": "John",
-        "secondForename": "Edward",
-        "surname": "Doe",
+        "firstForename": "Firstname",
+        "secondForename": "SecondnameE",
+        "surname": "Surname",
         "ihtpStatus": "Not reconciled"
       },
       {
@@ -60,8 +61,8 @@
         "inheritanceTaxReference": "A654321/42E",
         "paymentReference": "A654321/42E204675",
         "title": "Ms",
-        "firstForename": "Jane",
-        "surname": "Doe",
+        "firstForename": "FirstnameA",
+        "surname": "Surname",
         "ihtpStatus": "Not reconciled"
       },
       {

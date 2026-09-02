@@ -1,5 +1,5 @@
 meta {
-  name: Retrieve - Paid Version 001 (Jane Doe)
+  name: Retrieve - Paid Version 001 (FirstnameA Surname)
   type: http
   seq: 15
 }
@@ -26,7 +26,7 @@ headers {
 }
 
 tests {
-  test("Returns Jane Doe's paid version 001 report", function () {
+  test("Returns FirstnameA Surname's paid version 001 report", function () {
       expect(res.getStatus()).to.equal(200);
       expect(res.body.success.reportDetails.ihtVersion).to.equal("001");
       expect(res.body.success.reportDetails.ihtPaid).to.equal("true");

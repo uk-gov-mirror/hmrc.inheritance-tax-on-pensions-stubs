@@ -15,9 +15,9 @@
     "deceased": {
       "deceasedPersonalDetails": {
         "title": "Mr",
-        "firstForename": "John",
-        "secondForename": "William",
-        "surname": "Doe",
+        "firstForename": "Firstname",
+        "secondForename": "Secondname",
+        "surname": "Surname",
         "ninoExist": "No",
         "reasonNoNINO": "Reason for no NINO"
       },
@@ -31,9 +31,9 @@
       "typeOfPR": "01",
       "prContactDetails": {
         "title": "Mrs",
-        "firstForename": "Jane",
+        "firstForename": "FirstnameA",
         "secondForename": "Marie",
-        "surname": "Doe"
+        "surname": "Surname"
       },
       "prAddress": {
         "addressLine1": "1 ABCDE Street",
@@ -56,9 +56,9 @@
         "beneficiaryContactDetails": {
           "beneficiaryPersonalDetails": {
             "title": "Mr",
-            "firstForename": "Johnny",
+            "firstForename": "Firstnameny",
             "secondForename": "W",
-            "surname": "Doe",
+            "surname": "Surname",
             "ninoExist": "No",
             "reasonForNoNINO": "Test"
           },
@@ -84,7 +84,7 @@
             "title": "Miss",
             "firstForename": "Joanna",
             "secondForename": "W",
-            "surname": "Doe",
+            "surname": "Surname",
             "ninoExist": "No",
             "reasonForNoNINO": "Test"
           },

@@ -9,9 +9,9 @@
         "inheritanceTaxReference": "A654321/25A",
         "paymentReference": "A654321/25A392617",
         "title": "Dr",
-        "firstForename": "John",
-        "secondForename": "William",
-        "surname": "Doe",
+        "firstForename": "Firstname",
+        "secondForename": "Secondname",
+        "surname": "Surname",
         "ihtpStatus": "Not reconciled"
       }
     ]

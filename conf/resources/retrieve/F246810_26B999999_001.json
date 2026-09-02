@@ -16,11 +16,12 @@
     "deceased": {
       "deceasedPersonalDetails": {
         "title": "Mr",
-        "firstForename": "John",
-        "secondForename": "Edward",
-        "surname": "Doe",
+        "firstForename": "Firstname",
+        "secondForename": "Middlename",
+        "surname": "Surname",
         "ninoExist": "Yes",
-        "nino": "AB123456C"
+        "nino": null,
+        "reasonForNoNino": "Reason for no national insurance number"
       },
       "deceasedDetails": {
         "deceasedsDOB": "1948-03-12",
@@ -32,14 +33,14 @@
       "typeOfPR": "01",
       "prContactDetails": {
         "title": "Ms",
-        "firstForename": "Jane",
-        "secondForename": "Victoria",
-        "surname": "Doe"
+        "firstForename": "FirstnameA",
+        "secondForename": "MiddlenameA",
+        "surname": "Surname"
       },
       "prAddress": {
-        "addressLine1": "10 Market Street",
-        "addressLine2": "York",
-        "postcode": "YO1 7AA",
+        "addressLine1": "10 AB Street",
+        "addressLine2": "ABtown",
+        "postcode": "YY1 7YY",
         "country": "GB"
       }
     },
@@ -57,16 +58,17 @@
         "beneficiaryContactDetails": {
           "beneficiaryPersonalDetails": {
             "title": "Ms",
-            "firstForename": "Jane",
-            "secondForename": "Isabelle",
-            "surname": "Doe",
+            "firstForename": "FirstnameA",
+            "secondForename": "MiddlenameB",
+            "surname": "Surname",
             "ninoExist": "Yes",
-            "nino": "CE123456A"
+            "nino": null,
+            "reasonForNoNino": "Reason for no national insurance number"
           },
           "beneficiaryAddress": {
-            "addressLine1": "21 River Road",
-            "addressLine2": "Leeds",
-            "postcode": "LS1 4AB",
+            "addressLine1": "21 RB Road",
+            "addressLine2": "RBtown",
+            "postcode": "LL1 4LL",
             "country": "GB"
           }
         },
@@ -81,16 +83,17 @@
         "beneficiaryContactDetails": {
           "beneficiaryPersonalDetails": {
             "title": "Mr",
-            "firstForename": "John",
-            "secondForename": "George",
-            "surname": "Doe",
+            "firstForename": "Firstname",
+            "secondForename": "MiddlenameC",
+            "surname": "Surname",
             "ninoExist": "Yes",
-            "nino": "GH123456B"
+            "nino": null,
+            "reasonForNoNino": "Reason for no national insurance number"
             },
           "beneficiaryAddress": {
-            "addressLine1": "8 Station Lane",
-            "addressLine2": "Sheffield",
-            "postcode": "S1 2HH",
+            "addressLine1": "8 SB Lane",
+            "addressLine2": "SBtown",
+            "postcode": "SS1 2SS",
             "country": "GB"
             }
         },

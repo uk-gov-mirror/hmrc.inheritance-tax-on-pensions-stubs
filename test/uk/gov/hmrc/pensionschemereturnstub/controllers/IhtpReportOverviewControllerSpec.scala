@@ -51,8 +51,8 @@ class IhtpReportOverviewControllerSpec extends SpecBase with APIResponses {
       val content = contentAsJson(result)
       (JsPath \ "success" \ "pstr")(content) mustBe empty
       (JsPath \ "success" \ "ihtpOverview" \ 0 \ "fbNumber")(content) mustBe List(JsString("119000004320"))
-      (JsPath \ "success" \ "ihtpOverview" \ 0 \ "firstForename")(content) mustBe List(JsString("John"))
-      (JsPath \ "success" \ "ihtpOverview" \ 0 \ "surname")(content) mustBe List(JsString("Doe"))
+      (JsPath \ "success" \ "ihtpOverview" \ 0 \ "firstForename")(content) mustBe List(JsString("Firstname"))
+      (JsPath \ "success" \ "ihtpOverview" \ 0 \ "surname")(content) mustBe List(JsString("Surname"))
     }
 
     "return 200-Ok for a second known pstr" in {

@@ -24,9 +24,9 @@ The body of the payload is the report details built from user answers to be subm
   "deceasedDetails": {
     "inheritanceTaxReference": "A123456/25A",
     "title": "Mr",
-    "firstForename": "John",
-    "secondForename": "William",
-    "surname": "Doe",
+    "firstForename": "Firstname",
+    "secondForename": "Middlename",
+    "surname": "Surname",
     "dateOfBirth": "1950-01-01",
     "dateOfDeath": "2026-01-01",
     "nino": null,
@@ -35,9 +35,9 @@ The body of the payload is the report details built from user answers to be subm
   "prDetails": {
     "individual": {
       "title": "Mr",
-      "firstForename": "John",
-      "secondForename": "William",
-      "surname": "Doe"
+      "firstForename": "Firstname",
+      "secondForename": "Middlename",
+      "surname": "Surname"
     }
   }
 }
@@ -53,9 +53,9 @@ The body of the payload is the report details built from user answers to be subm
   "deceasedDetails": {
     "inheritanceTaxReference": "A123456/25A",
     "title": "Mr",
-    "firstForename": "John",
-    "secondForename": "William",
-    "surname": "Doe",
+    "firstForename": "Firstname",
+    "secondForename": "Middlename",
+    "surname": "Surname",
     "dateOfBirth": "1950-01-01",
     "dateOfDeath": "2026-01-01",
     "nino": null,
@@ -63,11 +63,11 @@ The body of the payload is the report details built from user answers to be subm
   },
   "prDetails": {
     "organisation": {
-      "organisationName": "Doe Incorporated",
+      "organisationName": "Surname Incorporated",
       "title": "Ms",
-      "firstForename": "Jane",
-      "secondForename": "Ann",
-      "surname": "Doe"
+      "firstForename": "FirstnameA",
+      "secondForename": "MiddlenameB",
+      "surname": "Surname"
     }
   }
 }
@@ -168,8 +168,8 @@ Known paymentReference + version combinations:
 - `A123456/25A629671` + `001` (PSTR: 24000001IN)
 - `A556789/26A758204` + `001` (PSTR: 24000001IN, pinned amendment baseline)
 - `A556789/26A758204` + `002` (PSTR: 24000001IN, current amended report)
-- `F246810/26B314159` + `001` (PSTR: 24000001IN, paid John Edward Doe report)
-- `A975310/26C271828` + `001` (PSTR: 24000001IN, paid Jane Margaret Doe report)
+- `F246810/26B314159` + `001` (PSTR: 24000001IN, paid Firstname Middlename Surname report)
+- `A975310/26C271828` + `001` (PSTR: 24000001IN, paid FirstnameA MiddlenameA Surname report)
 - `A240036/26A836241` + `001` or `002` (PSTR: 24000036IN, paid amendment)
 - `F360024/26B472915` + `001` or `002` (PSTR: 24000036IN, not reconciled amendment)
 - `A000042/26C604218` + `001` or `002` (PSTR: 00000042IN, paid amendment)
@@ -194,8 +194,8 @@ beneficiaries changed by the amendment.
 
 | fbNumber | Payment reference | Deceased | Overview status | Retrieve status | Version |
 | --- | --- | --- | --- | --- | --- |
-| `119000004362` | `F246810/26B314159` | John Edward Doe | `Paid` | `Paid` | `001` |
-| `119000004363` | `A975310/26C271828` | Jane Margaret Doe | `Paid` | `Paid` | `001` |
+| `119000004362` | `F246810/26B314159` | Firstname Middlename Surname | `Paid` | `Paid` | `001` |
+| `119000004363` | `A975310/26C271828` | FirstnameA Margaret Surname | `Paid` | `Paid` | `001` |
 
 Both reports are included in the unfiltered overview for PSTR `24000001IN`, can be selected with `status=Paid`, and can be
 retrieved either by their fbNumber or by their payment reference with `versionNumber=001`.
@@ -256,8 +256,8 @@ Useful requests:
 - `Retrieve - Success (paymentReference + version)` - exercises the successful retrieve by payment reference response
 - `Retrieve - Amendment Version 001` - retrieves the pinned paid version
 - `Retrieve - Amendment Version 002` - retrieves the current version and its change flags
-- `Retrieve - Paid Version 001 (John Doe)` - retrieves the additional paid John Edward Doe report
-- `Retrieve - Paid Version 001 (Jane Doe)` - retrieves the additional paid Jane Margaret Doe report
+- `Retrieve - Paid Version 001 (Firstname Surname)` - retrieves the additional paid Firstname Middlename Surname report
+- `Retrieve - Paid Version 001 (FirstnameA Surname)` - retrieves the additional paid FirstnameA MiddlenameA Surname report
 - `Retrieve - No Records 422` - exercises the no records retrieve response
 - `Retrieve - PSTR Mismatch 422` - exercises the PSTR mismatch retrieve response
 - `Retrieve - Bad Request 400` - exercises the bad request retrieve response
