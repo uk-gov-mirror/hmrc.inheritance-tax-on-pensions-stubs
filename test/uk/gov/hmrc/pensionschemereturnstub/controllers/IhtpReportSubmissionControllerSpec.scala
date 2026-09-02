@@ -58,9 +58,9 @@ class IhtpReportSubmissionControllerSpec extends SpecBase with APIResponses {
         "deceased" -> Json.obj(
           "deceasedPersonalDetails" -> Json.obj(
             "title" -> "Mr",
-            "firstForename" -> "John",
-            "secondForename" -> "William",
-            "surname" -> "Doe",
+            "firstForename" -> "Firstname",
+            "secondForename" -> "Secondname",
+            "surname" -> "Surname",
             "ninoExist" -> "No",
             "reasonNoNINO" -> "Reason for no national insurance number"
           ),
@@ -75,9 +75,9 @@ class IhtpReportSubmissionControllerSpec extends SpecBase with APIResponses {
           "prContactDetails" -> Json.obj(
             "orgName" -> "Test Organisation",
             "title" -> "Ms",
-            "firstForename" -> "Jane",
+            "firstForename" -> "FirstnameA",
             "secondForename" -> "Ann",
-            "surname" -> "Doe"
+            "surname" -> "Surname"
           ),
           "prAddress" -> Json.obj(
             "addressLine1" -> "1 ABCDE Street",
@@ -104,7 +104,7 @@ class IhtpReportSubmissionControllerSpec extends SpecBase with APIResponses {
         )
       )
       validData.validate[IhtpPaymentNoticeSubmission].map(_.personalRep.prContactDetails) mustBe JsSuccess(
-        PrContactDetails(Some("Test Organisation"), Some("Ms"), "Jane", Some("Ann"), "Doe")
+        PrContactDetails(Some("Test Organisation"), Some("Ms"), "FirstnameA", Some("Ann"), "Surname")
       )
 
       val postRequest = fakePostRequest.withJsonBody(validData)
@@ -123,8 +123,8 @@ class IhtpReportSubmissionControllerSpec extends SpecBase with APIResponses {
         ),
         "deceasedDetails" -> Json.obj(
           "inheritanceTaxReference" -> "A123456/25A",
-          "firstForename" -> "John",
-          "surname" -> "Doe",
+          "firstForename" -> "Firstname",
+          "surname" -> "Surname",
           "dateOfBirth" -> "1950-01-01",
           "dateOfDeath" -> "2026-01-01",
           "reasonForNoNino" -> "Reason for no national insurance number"
@@ -132,9 +132,9 @@ class IhtpReportSubmissionControllerSpec extends SpecBase with APIResponses {
         "prDetails" -> Json.obj(
           "organisation" -> Json.obj(
             "title" -> "Ms",
-            "firstForename" -> "Jane",
+            "firstForename" -> "FirstnameA",
             "secondForename" -> "Ann",
-            "surname" -> "Doe"
+            "surname" -> "Surname"
           )
         )
       )
@@ -154,8 +154,8 @@ class IhtpReportSubmissionControllerSpec extends SpecBase with APIResponses {
         ),
         "deceasedDetails" -> Json.obj(
           "inheritanceTaxReference" -> "A123456/25A",
-          "firstForename" -> "John",
-          "surname" -> "Doe",
+          "firstForename" -> "Firstname",
+          "surname" -> "Surname",
           "dateOfBirth" -> "1950-01-01",
           "dateOfDeath" -> "2026-01-01",
           "reasonForNoNino" -> "Reason for no national insurance number"

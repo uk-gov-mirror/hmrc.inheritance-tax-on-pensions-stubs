@@ -5,9 +5,9 @@
   "deceasedDetails": {
     "inheritanceTaxReference": "A123456/25A",
     "title": "Mr",
-    "firstForename": "John",
-    "secondForename": "William",
-    "surname": "Doe",
+    "firstForename": "Firstname",
+    "secondForename": "Secondname",
+    "surname": "Surname",
     "dateOfBirth": "1950-01-01",
     "dateOfDeath": "2026-01-01",
     "nino": null,
@@ -16,9 +16,9 @@
   "prDetails": {
     "organisation": {
       "title": "Test Organisation",
-      "firstForename": "Jane",
-      "secondForename": "Ann",
-      "surname": "Doe",
+      "firstForename": "FirstnameA",
+      "secondForename": "SecondnameB",
+      "surname": "Surname",
       "addressLine1": "1 ABCDE Street",
       "addressLine2": "FGHIJ Town",
       "ukPostcode": "ZZ99 1AA",

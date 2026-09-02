@@ -5,9 +5,9 @@
   "deceased": {
     "deceasedPersonalDetails": {
             "title": "Mr",
-            "firstForename": "John",
-            "secondForename": "William",
-            "surname": "Doe",
+            "firstForename": "Firstname",
+            "secondForename": "Secondname",
+            "surname": "Surname",
             "ninoExist": "No",
             "reasonNoNINO": "Reason for no national insurance number"
     },
@@ -21,9 +21,9 @@
     "typeOfPR": "01",
     "prContactDetails": {
       "title": "Mr",
-      "firstForename": "John",
-      "secondForename": "William",
-      "surname": "Doe"
+      "firstForename": "Firstname",
+      "secondForename": "Secondname",
+      "surname": "Surname"
     },
     "prAddress": {
       "addressLine1": "1 ABCDE Street",
